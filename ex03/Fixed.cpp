@@ -152,15 +152,3 @@ const Fixed &Fixed::min(const Fixed &a, const Fixed &b)
 {
     return a < b ? a : b;
 }
-
-Fixed &Fixed::operator=(const int value)
-{
-    _value = value << _fractionalBits;
-    return *this;
-}
-
-Fixed &Fixed::operator=(const float value)
-{
-    _value = roundf(value * (1 << _fractionalBits));
-    return *this;
-}
